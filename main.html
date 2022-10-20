@@ -2,10 +2,38 @@
 
 <html>
     <head>
+      <title>Night lamp with music background</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
+    
+      <div class="content">
+        <div class="left-col">
+
+        </div>
+        <div class="right-col">
+            <p>Click Here to Listen</p>
+            <img src="./pause.png" id="icon" width="100" height="100">
+        </div>
+    </div>
+    <audio id="relax">
+        <source src="./relax.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        var relax = document.getElementById("relax");
+        var icon = document.getElementById("icon");
+        icon.onclick = function() {
+            if (relax.paused) {
+                relax.play();
+                icon.src = "play.png";
+            } else {
+                relax.pause();
+                icon.src = "pause.png";
+            }
+        }
+    </script>
+
         <div class="lamp">
             <div class="top"></div>
             <div class="center">
